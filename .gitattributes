@@ -9,9 +9,12 @@
 .gitattributes text
 .gitignore text
 .editorconfig text
+LICENSE
 *.txt text
 *.dox text
 *.md text
+*.json text
+*.py text
 
 # Declare files that will always have CRLF line endings on checkout.
 *.def text eol=crlf
