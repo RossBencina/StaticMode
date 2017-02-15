@@ -8,6 +8,7 @@
 # endings on checkout.
 .gitattributes text
 .gitignore text
+.editorconfig text
 *.txt text
 *.dox text
 *.md text
