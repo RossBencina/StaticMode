@@ -1,0 +1,30 @@
+{ // see https://code.visualstudio.com/Docs/editor/tasks
+    "version": "0.1.0",
+    "command": "python",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "echoCommand": false,
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "exec-bang-command",
+            "command": "python",
+            "args": ["${workspaceRoot}/.vscode/ExecBangCmd.py", "${file}"],
+            "isBuildCommand": true, // run with Ctrl-Shift-B. Note we also have Ctrl-F5 mapped to the build command
+
+            //http://stackoverflow.com/questions/30269449/how-do-i-set-up-vscode-to-compile-c-code
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}
