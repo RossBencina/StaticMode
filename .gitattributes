@@ -3,8 +3,8 @@
 # and leave all files detected as binary untouched.
 * text=auto
 
-# Explicitly declare text files you want to always be normalized 
-# (Convert crlf => lf in the repo and converted to native line 
+# Explicitly declare text files you want to always be normalized
+# (Convert crlf => lf in the repo and converted to native line
 # endings on checkout.
 .gitattributes text
 .gitignore text
@@ -69,8 +69,8 @@
 
 # NOTE: Merging from the command prompt will add diff markers to the files if there
 # are conflicts (Merging from VS is not affected by the settings below, in VS
-# the diff markers are never inserted). Diff markers may cause the following 
-# file extensions to fail to load in VS. 
+# the diff markers are never inserted). Diff markers may cause the following
+# file extensions to fail to load in VS.
 
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
