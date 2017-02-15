@@ -36,7 +36,9 @@ Stepanov & Rose's "From Mathematics to Generic Programming."
 
 Except where noted, all code is **C++11**. The code has no dependencies.
 
-All off the code from this talk will be at: [github.com/RossBencina](https://github.com/RossBencina)
+All off the code and text from this talk is now at:
+
+[github.com/RossBencina/StaticMode/tree/master/docs/melb-cpp-talk-feb-2017](https://github.com/RossBencina/StaticMode/tree/master/docs/melb-cpp-talk-feb-2017)
 
 ## Goals
 
