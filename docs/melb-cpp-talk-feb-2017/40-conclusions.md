@@ -63,7 +63,7 @@ I've integrated some of the points that were raised into this version of the sli
 
 ## Extras (time permitting)
 
-* Type erasure example: `82-extra-type-erasure.cpp` demonstrates using mode expressions
+* Type erasure example: [`82-extra-type-erasure.cpp`](82-extra-type-erasure.cpp) demonstrates using mode expressions
   to build a class that implements a base-class interface.
 * Idea about using the same scheme for type-checking flags that use runtime values.
 * Could look at how I'm using this in my actual code.

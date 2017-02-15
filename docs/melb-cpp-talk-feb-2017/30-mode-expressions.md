@@ -89,6 +89,7 @@ void drawLine(ModeExpr={}) {
 ```
 
 In the next three files we'll:
+
 1. sketch out a form for the operators and expression types
 2. implement `operator|` to support constructing mode expressions using the "`dotted|arrows`" syntax
 3. implement the `get_mode_t` template, which extracts a specific mode from a mode expression
