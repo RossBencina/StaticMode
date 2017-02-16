@@ -24,9 +24,9 @@ which requires
 a C++17 compiler, you should be able to compile and run each `.cpp` file stand-alone
 with a C++11 compiler (I used clang++ 3.8.0-2ubuntu4 during the talk).
 If you open this repo (from the root directory) with VS Code, and have clang installed,
-you should be able to hit Ctrl-Shift-B to compile and run each file
+you can hit Ctrl-Shift-B to compile and run the currently open source file
 (see [`02-hello-world.cpp`](02-hello-world.cpp) for more details).
-Most things are also known to compile with MSVC2015, but there may be one particular
+Most C++ features used are also known to compile with MSVC2015, but there is one particular
 issue that I'll write about or fix soon (contact me if you need to know now).
 
 The final version of the code that was developed during the talk is presented in
