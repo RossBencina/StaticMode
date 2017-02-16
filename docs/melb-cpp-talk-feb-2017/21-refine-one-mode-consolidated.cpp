@@ -3,7 +3,7 @@
 // This file is exactly what we had in 20-one-mode.cpp plus 20d-one-mode.h
 
 // In the following files we'll make some refinements to provide
-// a Mode abstraction, which will use for the rest of the talk.
+// a Mode abstraction, which we'll use for the rest of the talk.
 
 #include <iostream> // cout
 
