@@ -375,8 +375,8 @@ TEST_CASE("StaticMode/mode-expression/operator-or/happy-path",
     REQUIRE(true);
 }
 
-TEST_CASE("StaticMode/mode-expression/operator-or/bad-usage",
-    "mode expression operator-| correctly fails to compile in these bad usaeg cases") {
+TEST_CASE("StaticMode/mode-expression/operator-or/incorrect-usage",
+    "mode expression operator-| correctly fails to compile in these incorrect usage cases") {
 
     enum class TestEnum { test1, test2 };
     constexpr Mode<TestEnum, TestEnum::test1> test1 = {};
