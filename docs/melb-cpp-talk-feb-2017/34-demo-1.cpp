@@ -132,10 +132,10 @@ private:
     void drawRightEnd_(decltype(circles)) { std::cout << "o"; }
 public:
 
-    template<typename ModesExpr=ModeSet<> > // default to empty ModeSet
-    void drawLine(ModesExpr={}) {
-        auto lineStyle = get_mode_t<LineStyle, ModesExpr, /*default:*/decltype(solid)> {};
-        auto endStyle = get_mode_t<EndStyle, ModesExpr, /*default:*/decltype(no_ends)> {};
+    template<typename ModeExpr=ModeSet<> > // default to empty ModeSet
+    void drawLine(ModeExpr={}) {
+        auto lineStyle = get_mode_t<LineStyle, ModeExpr, /*default:*/decltype(solid)> {};
+        auto endStyle = get_mode_t<EndStyle, ModeExpr, /*default:*/decltype(no_ends)> {};
 
         drawLeftEnd_(endStyle);
         drawLine_(lineStyle);

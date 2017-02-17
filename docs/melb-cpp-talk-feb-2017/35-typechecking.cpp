@@ -202,16 +202,16 @@ private:
     void drawRightEnd_(decltype(circles)) { std::cout << "o"; }
 public:
 
-    template<typename ModesExpr=ModeSet<> > // default to empty ModeSet
-    void drawLine(ModesExpr={}) {
-        static_assert(is_mode_expr<ModesExpr>::value == true, "expected a Mode or ModeSet");
+    template<typename ModeExpr=ModeSet<> > // default to empty ModeSet
+    void drawLine(ModeExpr={}) {
+        static_assert(is_mode_expr<ModeExpr>::value == true, "expected a Mode or ModeSet");
         using AcceptedModes = type_pack_<LineStyle, EndStyle>;
-        static_assert(is_subset_no_cv<typename ModesExpr::value_types, AcceptedModes>::value,
-                "drawLine() ModesExpr argument contains a mode from an invalid category (enum class). "
+        static_assert(is_subset_no_cv<typename ModeExpr::value_types, AcceptedModes>::value,
+                "drawLine() ModeExpr argument contains a mode from an invalid category (enum class). "
                 "expected at most one line style and one end style.");
 
-        auto lineStyle = get_mode_t<LineStyle, ModesExpr, /*default:*/decltype(solid)> {};
-        auto endStyle = get_mode_t<EndStyle, ModesExpr, /*default:*/decltype(no_ends)> {};
+        auto lineStyle = get_mode_t<LineStyle, ModeExpr, /*default:*/decltype(solid)> {};
+        auto endStyle = get_mode_t<EndStyle, ModeExpr, /*default:*/decltype(no_ends)> {};
 
         drawLeftEnd_(endStyle);
         drawLine_(lineStyle);

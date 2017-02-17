@@ -174,18 +174,18 @@ public:
 
 Painter::~Painter() {}
 
-template<typename ModesExpr=ModeSet<> > // default to empty ModeSet
+template<typename ModeExpr=ModeSet<> > // default to empty ModeSet
 class AsciiPainterT : public Painter {
     // Notice that we put type checks at the class-level here:
 
-    static_assert(is_mode_expr<ModesExpr>::value == true, "expected a Mode or ModeSet");
+    static_assert(is_mode_expr<ModeExpr>::value == true, "expected a Mode or ModeSet");
     using AcceptedModes = type_pack_<LineStyle, EndStyle>;
-    static_assert(is_subset_no_cv<typename ModesExpr::value_types, AcceptedModes>::value,
-            "drawLine() ModesExpr argument contains a mode from an invalid category (enum class). "
+    static_assert(is_subset_no_cv<typename ModeExpr::value_types, AcceptedModes>::value,
+            "drawLine() ModeExpr argument contains a mode from an invalid category (enum class). "
             "expected at most one line style and one end style.");
 
-    using lineStyle_t = get_mode_t<LineStyle, ModesExpr, /*default:*/decltype(solid)>;
-    using endStyle_t = get_mode_t<EndStyle, ModesExpr, /*default:*/decltype(no_ends)>;
+    using lineStyle_t = get_mode_t<LineStyle, ModeExpr, /*default:*/decltype(solid)>;
+    using endStyle_t = get_mode_t<EndStyle, ModeExpr, /*default:*/decltype(no_ends)>;
 
 private:
     void drawLine_(decltype(dotted)) { std::cout << ".........."; }
@@ -209,10 +209,10 @@ public:
     }
 };
 
-template<typename ModesExpr=ModeSet<> >
-std::unique_ptr<Painter> buildAsciiPainter(ModesExpr={})
+template<typename ModeExpr=ModeSet<> >
+std::unique_ptr<Painter> buildAsciiPainter(ModeExpr={})
 {
-    return std::unique_ptr<Painter>(new AsciiPainterT<ModesExpr>());
+    return std::unique_ptr<Painter>(new AsciiPainterT<ModeExpr>());
 }
 
 int main()
