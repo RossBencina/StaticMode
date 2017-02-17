@@ -40,7 +40,7 @@ using remove_cv_t_ = typename std::remove_cv<T>::type;
 
 // ----------------------------------------------------------------------------
 
-// A version of std::is_same that ingnores const/volatile qualifiers
+// A version of std::is_same that ignores const/volatile qualifiers
 
 template<typename T, typename U>
 using is_same_no_cv = std::is_same<remove_cv_t_<T>, remove_cv_t_<U> >;
@@ -287,7 +287,7 @@ using has_no_other_modes = detail::is_subset_no_cv<typename ModeExpr::value_type
 
 // ............................................................................
 
-// has_mode<EnumClasse, ModeExpr>
+// has_mode<EnumClass, ModeExpr>
 // test whether /ModeExpr/ contains a mode from category /EnumClass/ (an enum class value)
 
 template<typename ModeEnumClass, typename ModeExpr>
