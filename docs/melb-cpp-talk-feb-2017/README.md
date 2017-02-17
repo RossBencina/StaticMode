@@ -43,5 +43,6 @@ Ross.
 
 ---
 
-Everything in this repository is Copyright &copy; 2017 Ross Bencina.
+Everything in this repository is Copyright &copy; 2017 Ross Bencina,
+except where otherwise indicated.
 For the license, please see the LICENSE file in the repository root (MIT license).
