@@ -1,3 +1,5 @@
+//!clang++ -std=c++11 -Weverything -Wno-c++98-compat -Wno-unused-const-variable -Wno-unused-local-typedef -Wno-exit-time-destructors StaticMode_test.cpp -DCATCH_CONFIG_MAIN -I../include -I./Catch -o test.out && ./test.out
+
 // StaticMode
 // Copyright (c) 2017 Ross Bencina
 //
