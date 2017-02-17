@@ -75,7 +75,7 @@ constexpr Mode<Colour, Colour::blue> blue;
 //
 // type parameters:
 //   KeyEnumClass -- the type of the enum class used in Mode and ModeType
-//   ModeExpr -- a ModeSet or a single mode
+//   ModeExpr -- a ModeSet or a single Mode
 //   Default -- the type returned if KeyEnumClass does not match any mode in ModeExpr
 //
 // output:
@@ -95,7 +95,7 @@ struct get_mode {
     using type = typename std::remove_cv<Default>::type; // C++11: remove_cv
 };
 
-/// Specialization when ModeExpr is a single ModeSet with matching KeyEnumClass
+/// Specialization when ModeExpr is a single Mode with matching KeyEnumClass
 
 template <typename KeyEnumClass, KeyEnumClass X, typename Default>
 struct get_mode<KeyEnumClass, Mode<KeyEnumClass, X>, Default> {
