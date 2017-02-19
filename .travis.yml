@@ -6,7 +6,7 @@ sudo: false
 addons:
   apt:
     sources:
-      - george-edison55-precise-backports
+      - george-edison55-precise-backports # for cmake
     packages:
       - cmake
       - cmake-data
