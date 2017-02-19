@@ -1,11 +1,11 @@
 # StaticMode
 
-*C++11 or-able type-level values for compile time mode selection.*
+[![Build Status](https://travis-ci.org/RossBencina/StaticMode.svg?branch=master)](https://travis-ci.org/RossBencina/StaticMode)
 
 StaticMode is a small header-only C++11 library that can help you to
-implement a style of overload-based function selection, that is
-sometimes called tag dispatch. Unlike typical uses of tag dispatch,
-StaticMode is intended for use in public APIs.
+implement overload-based function selection (sometimes called tag dispatch).
+Unlike typical uses of tag dispatch, StaticMode is intended for use in
+public APIs.
 
 The key type in StaticMode is the`Mode` template, which you use to define mode
 constants (analogous to `enum` members or `constexpr` `std::integral_constant`
