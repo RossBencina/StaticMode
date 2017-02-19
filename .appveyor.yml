@@ -60,7 +60,7 @@ before_build:
   - cd c:\projects\StaticMode
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake .. -A %PLATFORM%
   
 # build with MSBuild
 build:
