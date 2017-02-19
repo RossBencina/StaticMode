@@ -399,7 +399,7 @@ TEST_CASE("StaticMode/mode-expression/operator-or/incorrect-usage",
     constexpr Mode<TestEnum, TestEnum::test2> test2 = {};
 
     REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1); // avoid unused variable warning
-    REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1); // avoid unused variable warning
+    REQUIRE(static_cast<TestEnum>(test2) == TestEnum::test2); // avoid unused variable warning
 
     // illegal cases:
     // uncommenting any of the following lines will fail to compile
