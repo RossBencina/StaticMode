@@ -40,22 +40,29 @@ private:
     void drawLineBody_(decltype(dashed)) { std::cout << "----------"; }
     void drawLineBody_(decltype(solid)) { std::cout << "__________"; }
 
+    // Workaround for MSVC 2015 error C2062 "type 'unknown-type' unexpected"
+    // when using decltype() in a template parameter argument list.
+    // See: http://stackoverflow.com/questions/41001482
+    using no_ends_type = decltype(no_ends);
+    using arrows_type = decltype(arrows);
+    using circles_type = decltype(circles);
+
     template<LineStyle X>
-    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, decltype(no_ends)) {
+    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, no_ends_type) {
         std::cout << " ";
         drawLineBody_(lineStyle);
         std::cout << "\n";
     }
 
     template<LineStyle X>
-    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, decltype(arrows)) {
+    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, arrows_type) {
         std::cout << "<";
         drawLineBody_(lineStyle);
         std::cout << ">\n";
     }
 
     template<LineStyle X>
-    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, decltype(circles)) {
+    void drawLine_(staticmode::Mode<LineStyle,X> lineStyle, circles_type) {
         std::cout << "o";
         drawLineBody_(lineStyle);
         std::cout << "o\n";
