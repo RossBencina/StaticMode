@@ -1,5 +1,8 @@
 language: cpp
 
+dist: trusty
+sudo: false
+
 addons:
   apt:
     sources:
@@ -7,6 +10,9 @@ addons:
     packages:
       - cmake
       - cmake-data
+ 
+os:
+  - linux
  
 compiler:
   - gcc
