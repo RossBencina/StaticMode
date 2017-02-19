@@ -26,7 +26,9 @@ StaticMode is defined in a single header file:
 include this header file in your project.
 
 StaticMode has no dependencies and requires only
-a working C++11 compiler. StaticMode is compatible with MSVC 2015 SP3.
+a working C++11 compiler. StaticMode is compatible with MSVC 2015 SP3
+(but see [`docs/MSVC-2015.md`](docs/MSVC-2015.md) for information about
+client code compatibility).
 
 > **Status:** So far the code has one known user: me.
 I'm happy to evolve StaticMode to be more useful for other people.
@@ -194,7 +196,7 @@ used to implement required mode categories
 (see [`examples/required-mode.cpp`](examples/required-mode.cpp)).
 
 
-## Building and Running Tests and Examples
+## Building and Running Tests and Examples (Requires Cmake)
 
 This section covers building and running the tests and examples.
 To use StaticMode you don't need to build anything, just include `StaticMode.h`.
@@ -204,7 +206,8 @@ Unit test source code is located at:
 
 ### On Unix
 
-To build and run the tests and examples on a Unix system, enter the following commands at a shell prompt from the project root (requires cmake):
+To build and run the tests and examples on a Unix system, enter the
+following commands at a shell prompt from the project root:
 
 ```
 $ mkdir build
@@ -221,6 +224,18 @@ $ make CTEST_OUTPUT_ON_FAILURE=1 test
 ```
 
 After running make you will find the example executables in `build/examples`.
+
+### On Windows
+
+From a Visual Studio command prompt in the project root directory, the following
+commands can be used to create a Visual Studio Solution in the `build\`
+directory.
+
+```
+> mkdir build
+> cd build
+> cmake ..
+```
 
 ---
 All files in this repository are Copyright &copy; 2017 Ross Bencina,
