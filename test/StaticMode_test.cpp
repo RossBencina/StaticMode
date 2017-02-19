@@ -166,6 +166,36 @@ TEST_CASE("StaticMode/detail/is_subset_no_cv", "is_subset_no_cv") {
 
 /// StaticMode library proper
 
+namespace {
+
+    // Modes used by the tests
+
+    enum class TestEnumOne { test1, test2, test3, testX };
+    constexpr Mode<TestEnumOne, TestEnumOne::test1> one_test1;
+    constexpr Mode<TestEnumOne, TestEnumOne::test2> one_test2;
+    constexpr Mode<TestEnumOne, TestEnumOne::test3> one_test3;
+    constexpr Mode<TestEnumOne, TestEnumOne::testX> one_testX;
+
+    enum class TestEnumTwo { test1, test2, test3, testX };
+    constexpr Mode<TestEnumTwo, TestEnumTwo::test1> two_test1;
+    constexpr Mode<TestEnumTwo, TestEnumTwo::test2> two_test2;
+    constexpr Mode<TestEnumTwo, TestEnumTwo::test3> two_test3;
+    constexpr Mode<TestEnumTwo, TestEnumTwo::testX> two_testX;
+
+    enum class TestEnumThree { test1, test2, test3, testX };
+    constexpr Mode<TestEnumThree, TestEnumThree::test1> three_test1;
+    constexpr Mode<TestEnumThree, TestEnumThree::test2> three_test2;
+    constexpr Mode<TestEnumThree, TestEnumThree::test3> three_test3;
+    constexpr Mode<TestEnumThree, TestEnumThree::testX> three_testX;
+
+    enum class TestEnumFour { test1, test2, test3, testX };
+    constexpr Mode<TestEnumFour, TestEnumFour::test1> four_test1;
+    constexpr Mode<TestEnumFour, TestEnumFour::test2> four_test2;
+    constexpr Mode<TestEnumFour, TestEnumFour::test3> four_test3;
+    constexpr Mode<TestEnumFour, TestEnumFour::testX> four_testX;
+
+} // end anonymous namespace
+
 // ModeType<>
 
 TEST_CASE("StaticMode/mode-type", "ModeType<> fields") {
@@ -317,34 +347,6 @@ TEST_CASE("StaticMode/mode-expression/is-mode-expr/basic",
     REQUIRE(true);
 }
 
-namespace {
-
-    enum class TestEnumOne { test1, test2, test3, testX };
-    constexpr Mode<TestEnumOne, TestEnumOne::test1> one_test1;
-    constexpr Mode<TestEnumOne, TestEnumOne::test2> one_test2;
-    constexpr Mode<TestEnumOne, TestEnumOne::test3> one_test3;
-    constexpr Mode<TestEnumOne, TestEnumOne::testX> one_testX;
-
-    enum class TestEnumTwo { test1, test2, test3, testX };
-    constexpr Mode<TestEnumTwo, TestEnumTwo::test1> two_test1;
-    constexpr Mode<TestEnumTwo, TestEnumTwo::test2> two_test2;
-    constexpr Mode<TestEnumTwo, TestEnumTwo::test3> two_test3;
-    constexpr Mode<TestEnumTwo, TestEnumTwo::testX> two_testX;
-
-    enum class TestEnumThree { test1, test2, test3, testX };
-    constexpr Mode<TestEnumThree, TestEnumThree::test1> three_test1;
-    constexpr Mode<TestEnumThree, TestEnumThree::test2> three_test2;
-    constexpr Mode<TestEnumThree, TestEnumThree::test3> three_test3;
-    constexpr Mode<TestEnumThree, TestEnumThree::testX> three_testX;
-
-    enum class TestEnumFour { test1, test2, test3, testX };
-    constexpr Mode<TestEnumFour, TestEnumFour::test1> four_test1;
-    constexpr Mode<TestEnumFour, TestEnumFour::test2> four_test2;
-    constexpr Mode<TestEnumFour, TestEnumFour::test3> four_test3;
-    constexpr Mode<TestEnumFour, TestEnumFour::testX> four_testX;
-
-} // end anonymous namespace
-
 TEST_CASE("StaticMode/mode-expression/operator-or/happy-path",
     "mode expression operator-| happy-path usage") {
 
@@ -394,12 +396,12 @@ TEST_CASE("StaticMode/mode-expression/operator-or/happy-path",
 TEST_CASE("StaticMode/mode-expression/operator-or/incorrect-usage",
     "mode expression operator-| correctly fails to compile in these incorrect usage cases") {
 
-    enum class TestEnum { test1, test2 };
-    constexpr Mode<TestEnum, TestEnum::test1> test1 = {};
-    constexpr Mode<TestEnum, TestEnum::test2> test2 = {};
+    // two modes from mode category TestEnumOne
+    static constexpr auto test1 = one_test1;
+    static constexpr auto test2 = one_test2;
 
-    REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1); // avoid unused variable warning
-    REQUIRE(static_cast<TestEnum>(test2) == TestEnum::test2); // avoid unused variable warning
+    REQUIRE(static_cast<TestEnumOne>(test1) == TestEnumOne::test1); // avoid unused variable warning
+    REQUIRE(static_cast<TestEnumOne>(test2) == TestEnumOne::test2); // avoid unused variable warning
 
     // illegal cases:
     // uncommenting any of the following lines will fail to compile
