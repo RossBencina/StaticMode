@@ -1,5 +1,13 @@
 language: cpp
 
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake
+      - cmake-data
+ 
 compiler:
   - gcc
   - clang
@@ -12,3 +20,4 @@ before_script:
 script:
   - make -j2
   - make CTEST_OUTPUT_ON_FAILURE=1 test
+
