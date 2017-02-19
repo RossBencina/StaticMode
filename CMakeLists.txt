@@ -19,11 +19,10 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
   # using Visual Studio C++
   # /EHsc enable exceptions (needed by Catch unit testing framework, not by StaticMode)
-  # /Za disables language extensions
   # /W4 maximum warning level
   # /WX treat warnings as errors
   # /analyze enable code analysis
-  set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} /std:c++14 /EHsc /Za /W4 /analyze")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14 /EHsc /W4 /analyze")
 
 endif()
 
