@@ -1,4 +1,4 @@
-//!clang++ -std=c++11 -Weverything -Wno-c++98-compat -Wno-unused-const-variable -Wno-unused-local-typedef -Wno-exit-time-destructors StaticMode_test.cpp -DCATCH_CONFIG_MAIN -I../include -I./Catch -o test.out && ./test.out
+//!clang++ -std=c++11 -Weverything -Wno-c++98-compat -Wno-unused-const-variable -Wno-exit-time-destructors StaticMode_test.cpp -DCATCH_CONFIG_MAIN -I../include -I./Catch -o test.out && ./test.out
 
 // StaticMode
 // Copyright (c) 2017 Ross Bencina
@@ -238,13 +238,25 @@ TEST_CASE("StaticMode/mode-set/must-contain-only-modes",
     "ModeSet<> will fail to compile if you try to put anything but modes in it") {
 
     // legal cases:
-    using modeSet0_t = ModeSet<>;
-    using modeSet1_t = ModeSet<Mode<char, 1> >;
-    using modeSet2_t = ModeSet<Mode<char, 1>, Mode<int, 2> >;
-    using modeSet3_t = ModeSet<Mode<char, 1>, Mode<int, 2>, Mode<bool, false> >;
+    {
+        using modeSet_t = ModeSet<>;
+        modeSet_t ms;
+    }
+    {
+        using modeSet_t = ModeSet<Mode<char, 1> >;
+        modeSet_t ms;
+    }
+    {
+        using modeSet_t = ModeSet<Mode<char, 1>, Mode<int, 2> >;
+        modeSet_t ms;
+    }
+    {
+        using modeSet_t = ModeSet<Mode<char, 1>, Mode<int, 2>, Mode<bool, false> >;
+        modeSet_t ms;
+    }
 
     // illegal cases:
-    // uncommenting any of the following lines will fail to compile
+    // uncommenting any of the following lines should fail to compile
     //auto modeSet1x = ModeSet<int> {};
     //auto modeSet2x = ModeSet<int, Mode<int, 2> > {};
     //auto modeSet2y = ModeSet<Mode<char, 1>, int > {};
