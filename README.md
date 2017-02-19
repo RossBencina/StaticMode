@@ -205,7 +205,7 @@ To use StaticMode you don't need to build anything, just include `StaticMode.h`.
 Unit test source code is located at:
 [`test/StaticMode_test.cpp`](test/StaticMode_test.cpp).
 
-### On Unix
+### Unix
 
 To build and run the tests and examples on a Unix system, enter the
 following commands at a shell prompt from the project root:
@@ -226,7 +226,7 @@ $ make CTEST_OUTPUT_ON_FAILURE=1 test
 
 After running make you will find the example executables in `build/examples`.
 
-### On Windows
+### Windows
 
 From a Visual Studio command prompt in the project root directory, the following
 commands can be used to create a Visual Studio Solution in the `build\`
