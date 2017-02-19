@@ -241,18 +241,22 @@ TEST_CASE("StaticMode/mode-set/must-contain-only-modes",
     {
         using modeSet_t = ModeSet<>;
         modeSet_t ms;
+        (void)ms; // avoid unused variable warning
     }
     {
         using modeSet_t = ModeSet<Mode<char, 1> >;
         modeSet_t ms;
+        (void)ms; // avoid unused variable warning
     }
     {
         using modeSet_t = ModeSet<Mode<char, 1>, Mode<int, 2> >;
         modeSet_t ms;
+        (void)ms; // avoid unused variable warning
     }
     {
         using modeSet_t = ModeSet<Mode<char, 1>, Mode<int, 2>, Mode<bool, false> >;
         modeSet_t ms;
+        (void)ms; // avoid unused variable warning
     }
 
     // illegal cases:
@@ -393,6 +397,9 @@ TEST_CASE("StaticMode/mode-expression/operator-or/incorrect-usage",
     enum class TestEnum { test1, test2 };
     constexpr Mode<TestEnum, TestEnum::test1> test1 = {};
     constexpr Mode<TestEnum, TestEnum::test2> test2 = {};
+
+    REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1); // avoid unused variable warning
+    REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1); // avoid unused variable warning
 
     // illegal cases:
     // uncommenting any of the following lines will fail to compile
