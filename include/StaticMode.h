@@ -177,7 +177,7 @@ struct Mode : ModeType<T> {
     using value_type = T; // value_type is typically the enum class type
 
     //  Allow using Mode instances as runtime values.
-    static constexpr T value = X;
+    static constexpr value_type value = X;
 
     // Mode instances automatically convert to the underlying enum value
     constexpr operator value_type() const noexcept { return value; }
