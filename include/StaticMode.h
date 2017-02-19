@@ -203,6 +203,8 @@ struct Mode : ModeType<T> {
     constexpr Mode() {}
 };
 
+template<typename T, T X> constexpr T Mode<T,X>::value;
+
 // Type checking predicates:
 
 namespace detail {

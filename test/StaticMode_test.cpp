@@ -224,6 +224,20 @@ TEST_CASE("StaticMode/mode/fields", "Mode<> fields") {
     REQUIRE(true);
 }
 
+TEST_CASE("StaticMode/mode/fields/value/local/enum", "Mode<> with local enum. See issue #1") {
+
+    enum class TestEnum { test1, test2 };
+    constexpr Mode<TestEnum, TestEnum::test1> test1 = {};
+
+    REQUIRE(static_cast<TestEnum>(test1) == TestEnum::test1);
+}
+
+TEST_CASE("StaticMode/mode/fields/value/address-of", "take address of Mode<>::value") {
+
+    const TestEnumOne *x = &Mode<TestEnumOne, TestEnumOne::test1>::value;
+    REQUIRE(x != nullptr);
+}
+
 TEST_CASE("StaticMode/mode/is-mode", "is_mode<> true for any Mode<>, false otherwise") {
 
     static_assert(is_mode<Mode<int,0> >::value == true, "");
