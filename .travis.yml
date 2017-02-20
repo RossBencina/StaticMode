@@ -25,7 +25,7 @@ matrix:
 
     - os: linux
       sudo: required
-      language: generic # use `generic` otherwise Travis sets CXX, CC to default compilers
+      language: generic # use `generic` otherwise Travis sets CXX and CC to default compilers
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.6']
@@ -34,20 +34,20 @@ matrix:
         - CXX=clang++-3.6
         - CC=clang-3.6
 
-    - os: linux
-      sudo: required
-      language: generic
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.7']
-          packages: ['clang-3.7']
-      env:
-        - CXX=clang++-3.7
-        - CC=clang-3.7
+#    - os: linux
+#      sudo: required
+#      language: generic # stop Travis setting CXX and CC
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.7']
+#          packages: ['clang-3.7']
+#      env:
+#        - CXX=clang++-3.7
+#        - CC=clang-3.7
 
     - os: linux
       sudo: required
-      language: generic
+      language: generic # stop Travis setting CXX and CC
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
@@ -56,16 +56,16 @@ matrix:
         - CXX=clang++-3.8
         - CC=clang-3.8
 
-    - os: linux
-      sudo: required
-      language: generic
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.9']
-          packages: ['clang-3.9']
-      env:
-        - CXX=clang++-3.9
-        - CC=clang-3.9
+#    - os: linux
+#      sudo: required
+#      language: generic # stop Travis setting CXX and CC
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.9']
+#          packages: ['clang-3.9']
+#      env:
+#        - CXX=clang++-3.9
+#        - CC=clang-3.9
 
 before_script:
   # Note: cmake will use the CXX and CC environment variables to determine the toolchain
