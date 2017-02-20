@@ -15,21 +15,29 @@ matrix:
   include:
     # Linux GCC
     - os: linux
-      compiler: gcc
-      env:
-        # default Travis CI gcc (4.8.4)
-        - CXX=g++
-        - CC=gcc
+      compiler: gcc # default Travis CI gcc (4.8.4)
+      # (Travis sets CC, CXX)
 
     # Linux Clang
     - os: linux
-      compiler: clang
+      compiler: clang # default Travis CI clang (3.5.0)
+      # (Travis sets CC, CXX)
+
+    # Experimental:
+    - os: linux
+      sudo: required
+      language: generic
+      addons:
+        apt:
+          sources: ['llvm-toolchain-precise-3.8']
+          packages: ['clang-3.8']
       env:
-        # default Travis CI clang (3.5.0)
-        - CXX=g++
-        - CC=gcc
+        - CXX=clang++-3.8
+        - CC=clang-3.8
 
 before_script:
+  - ${CXX} --version
+  - ${CC} --version
   - mkdir build
   - cd build
   - cmake ..
