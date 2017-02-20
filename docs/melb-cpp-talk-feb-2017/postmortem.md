@@ -90,3 +90,13 @@ what non-type template parameters are and how they work. I could have
 gone through parsing `Mode<T, X>` to make sure that they understood
 that X is an enumeration value of type T. A simpler initial example such
 as `Mode<int, 42>` might have helped at that point.
+
+
+### Misc
+
+Other things raised by the audience:
+
+- How does this compare to normal flag logic with link-time optimization?
+
+- Why not use function template specialization? Because it doesn't work
+  with member function templates.
