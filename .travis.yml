@@ -89,6 +89,33 @@ matrix:
     #     - CXX=clang++-4.0
     #     - CC=clang-4.0
 
+    # OSX Clang
+    - os: osx
+      - compiler: clang
+      - osx_image: xcode8.2
+
+    - os: osx
+      - compiler: clang
+      - osx_image: xcode7.3
+
+    - os: osx
+      - compiler: clang
+      - osx_image: xcode6.4
+
+    # OSX GCC
+    - os: osx
+      - compiler: gcc
+      - osx_image: xcode8.2
+
+    - os: osx
+      - compiler: gcc
+      - osx_image: xcode7.3
+
+    - os: osx
+      - compiler: gcc
+      - osx_image: xcode6.4
+
+
 before_script:
   # Note: cmake will use the CXX and CC environment variables to determine the toolchain
   - ${CXX} --version
