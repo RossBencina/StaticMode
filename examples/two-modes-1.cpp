@@ -26,7 +26,7 @@ constexpr staticmode::Mode<EndStyle, EndStyle::no_ends> no_ends;
 constexpr staticmode::Mode<EndStyle, EndStyle::arrows> arrows;
 constexpr staticmode::Mode<EndStyle, EndStyle::circles> circles;
 
-enum class Fruit { apple, orange, banana }; // not an accepted mode for drawLine(),
+enum class Fruit { apple, orange, banana }; // not an accepted mode for drawLine()
 
 constexpr staticmode::Mode<Fruit, Fruit::apple> apple;
 constexpr staticmode::Mode<Fruit, Fruit::orange> orange;
