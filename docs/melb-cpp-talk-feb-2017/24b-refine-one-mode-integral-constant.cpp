@@ -14,7 +14,6 @@
 //     want to use (or reproduce.)
 //
 // Cons:
-//   * doesn't have a user-defined default ctor; need `= {}` to initialize values
 //   * doesn't have a base class, so general-case default requires a template (see example below)
 //   * later, we'll be defining operators over our Mode template, and
 //     we want our operators to only work with our Modes. We wouldn't

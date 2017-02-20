@@ -27,8 +27,7 @@
 
 template<typename T, T X> // <-- Important: T will be an enum class type, X is an instance of T
 struct Mode {
-    // default ctor allow default initialization of constexpr instances:
-    constexpr Mode() {} // C++11: constexpr
+    constexpr Mode() {} // hack/workaround: allow default initialization in clang < 3.9
 };
 
 // ............................................................................
