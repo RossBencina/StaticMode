@@ -176,9 +176,9 @@ converts them to the underlying `enum class` value if needed.
 `Mode` also implements `operator()` that returns the `enum class` value,
 so that `Mode` instances can be used as function objects.
 
-### `is_mode_expression` template
+### `is_mode_expr` template
 
-The `is_mode_expression` template can be used to check whether a function
+The `is_mode_expr` template can be used to check whether a function
 argument is a mode expression. This can be used in combination with
 `static_assert` to emit a compilation error (see examples).
 
