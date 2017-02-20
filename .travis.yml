@@ -91,29 +91,29 @@ matrix:
 
     # OSX Clang
     - os: osx
-      - compiler: clang
-      - osx_image: xcode8.2
+      compiler: clang
+      osx_image: xcode8.2
 
     - os: osx
-      - compiler: clang
-      - osx_image: xcode7.3
+      compiler: clang
+      osx_image: xcode7.3
 
     - os: osx
-      - compiler: clang
-      - osx_image: xcode6.4
+      compiler: clang
+      osx_image: xcode6.4
 
     # OSX GCC
     - os: osx
-      - compiler: gcc
-      - osx_image: xcode8.2
+      compiler: gcc
+      osx_image: xcode8.2
 
     - os: osx
-      - compiler: gcc
-      - osx_image: xcode7.3
+      compiler: gcc
+      osx_image: xcode7.3
 
     - os: osx
-      - compiler: gcc
-      - osx_image: xcode6.4
+      compiler: gcc
+      osx_image: xcode6.4
 
 
 before_script:
