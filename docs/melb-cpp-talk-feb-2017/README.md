@@ -19,29 +19,34 @@ numbering scheme. Roughly, the leading number represents sections of the talk. 4
 final section. 80 are extras, and 90 is reference material you probably don't need
 to worry about.
 
+The final version of the code that was presented during the talk is
+[`35-typechecking.cpp`](35-typechecking.cpp). This is similar to the code
+that is now available as `StaticMode.h` and `examples/two-modes-1.cpp`.
+
+### Compiler Compatibility
+
 With the exception of [`24a-cpp17-auto-template-parameter.cpp`](24a-cpp17-auto-template-parameter.cpp),
 which requires
 a C++17 compiler, you should be able to compile and run each `.cpp` file stand-alone
-with a C++11 compiler (I used clang++ 3.8.0-2ubuntu4 during the talk).
+with any C++11 compiler (I used clang++ 3.8.0-2ubuntu4 during the talk).
 If you open this repo (from the root directory) with VS Code, and have clang installed,
 you can hit Ctrl-Shift-B to compile and run the currently open source file
 (see [`02-hello-world.cpp`](02-hello-world.cpp) for more details).
 
-Most C++ features used are also known to compile with MSVC 2015. There is one
-particular use of `decltype` that is broken in MSVC 2015. A workaround is
-documented in `docs/MSVC-2015.md`.
+#### MSVC 2015 SP3
 
-The final version of the code that was developed during the talk is presented in
-[`35-typechecking.cpp`](35-typechecking.cpp).
-
-I plan to factor out a single-header library shortly.
+All C++ code from the talk compiles with MSVC 2015 SP3, with one exception:
+the final `#ifdef`ed-out variant in `27-two-modes-alt-impls.cpp` will not
+compile as-is. This code uses `decltype` in a way that is broken in
+MSVC 2015. A workaround is documented in `docs/MSVC-2015.md`.
 
 Please let me know if anything is not working, or if you find errors/typos.
-Pull requests and issues happily accepted.
+Pull requests and issues will be happily accepted.
 
 Thanks,
 
 Ross.
+Melbourne, February 20, 2017.
 
 ---
 All files in this repository are Copyright &copy; 2017 Ross Bencina,
