@@ -1,7 +1,4 @@
-# StaticMode
-
-[![Build Status](https://travis-ci.org/RossBencina/StaticMode.svg?branch=master)](https://travis-ci.org/RossBencina/StaticMode)
-[![Build status](https://ci.appveyor.com/api/projects/status/wa3jhi8w8xject7a/branch/master?svg=true)](https://ci.appveyor.com/project/RossBencina/staticmode/branch/master)
+# StaticMode [![Build Status](https://travis-ci.org/RossBencina/StaticMode.svg?branch=master)](https://travis-ci.org/RossBencina/StaticMode) [![Build status](https://ci.appveyor.com/api/projects/status/wa3jhi8w8xject7a/branch/master?svg=true)](https://ci.appveyor.com/project/RossBencina/staticmode/branch/master)
 
 StaticMode is a small header-only C++11 library that can help you to
 implement overload-based function selection (sometimes called tag dispatch).
