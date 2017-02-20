@@ -10,13 +10,24 @@ addons:
     packages:
       - cmake
       - cmake-data
- 
-os:
-  - linux
- 
-compiler:
-  - gcc
-  - clang
+
+matrix:
+  include:
+    # Linux GCC
+    - os: linux
+      compiler: gcc
+      env:
+        # default Travis CI gcc (4.8.4)
+        - CXX=g++
+        - CC=gcc
+
+    # Linux Clang
+    - os: linux
+      compiler: clang
+      env:
+        # default Travis CI clang (3.5.0)
+        - CXX=g++
+        - CC=gcc
 
 before_script:
   - mkdir build
