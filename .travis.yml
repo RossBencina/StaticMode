@@ -28,7 +28,7 @@ matrix:
       language: generic # use `generic` otherwise Travis sets CXX, CC to default compilers
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.6']
+          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.6']
           packages: ['clang-3.6']
       env:
         - CXX=clang++-3.6
@@ -39,7 +39,7 @@ matrix:
       language: generic
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.7']
+          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.7']
           packages: ['clang-3.7']
       env:
         - CXX=clang++-3.7
@@ -50,7 +50,7 @@ matrix:
       language: generic
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.8']
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
           packages: ['clang-3.8']
       env:
         - CXX=clang++-3.8
@@ -61,7 +61,7 @@ matrix:
       language: generic
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.9']
+          sources: ['ubuntu-toolchain-r-test', llvm-toolchain-precise-3.9']
           packages: ['clang-3.9']
       env:
         - CXX=clang++-3.9
